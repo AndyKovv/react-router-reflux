@@ -11,20 +11,30 @@ export default class App extends Component {
 		}
 	}
 	componentDidMount(){
-		window.addEventListener('hashchange', () => {
+		window.addEventListener('hashchange', () => { //Событие hashchange при изменении мы вызываем изменнение state (Подписались на событие)
 			this.setState({
-				route: window.location.hash.substr(1)
+				route: window.location.hash.substr(1) //Изменяем занчение  route
 			})
 		})
 	}
 	render() {
-		let Child
+		let Child //Создаем внутреннюю переменную окружения
 
 		switch (this.state.route) {
-			case '/admin': Child = Admin; break;
+			case '/admin': Child = Admin; break; //Сравниваем обрезаный URL с шаблоном и присваеваем компоненте Child значение
 			case '/genre': Child = Genre; break;
-			defult: Child = Home;
+			default: Child = Home; //Если ни один шаблон не подошел утанавливает стандартный шаблон.
+			// В этом примере мы присваиваем переменной Child компоненты в зависимости от установленого URL и рендерим его.
 		}
-		return <div className='container'>Привет я из App</div> 
+		return (
+			<div className='container'>
+				<h1>APP</h1>
+				<ul>
+					<li><a href='#/admin'>Admin</a></li>
+					<li><a href='#/genre'>Genre</a></li>
+				</ul>
+				<Child />
+			</div>
+		) 
 	}
 }
