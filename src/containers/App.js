@@ -8,9 +8,9 @@ export default class App extends Component {
 		return (
 			<div className='container'>
 				<h1>APP</h1>
-				<ul>
+				<ul className='nav nav-pills'>
 					<li><Link to='/admin'>Admin</Link></li>
-					<li><Link to='/genre'>Genre</Link></li>
+					<li><Link to='/list'>Список жанров </Link></li>
 				</ul>
 
 				{/* вывод потомков, тоесть выводим содержимое компонетов Admin/Genre */}
