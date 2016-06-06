@@ -3,10 +3,13 @@ import thunkMiddleware from 'redux-thunk'
 import createLogger from 'redux-logger'
 import { rootReducer } from '../reducers'
 
+import { redirect } from '../middlewares/redirectMiddleware'
+
 export default function configureStore(){
 	const store = compose(
 		applyMiddleware(thunkMiddleware),
-		applyMiddleware(createLogger())
+		applyMiddleware(createLogger()),
+		applyMiddleware(redirect)
 		)(createStore)(rootReducer)
 
 	if(module.hot){

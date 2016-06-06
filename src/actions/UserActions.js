@@ -7,6 +7,8 @@ import {
 	LOGOUT_SUCCESS
 } from '../constants/User'
 
+import { ROUTING} from '../constants/Routing'
+
 export function login(payload){
 	return (dispatch) => {
 		dispatch({
@@ -21,7 +23,17 @@ export function login(payload){
 					isAuthenticated: true
 				}
 			})
+			dispatch({
+				type:ROUTING,
+				payload:{
+					method: 'replace',
+					nextUrl: '/admin'
+			}
+		})
+
 		}, 3000)
+
+	
 	}
 }
 

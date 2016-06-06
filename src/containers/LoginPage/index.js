@@ -22,7 +22,7 @@ export default class LoginPage extends Component{
 				</form>
 				{
 					fetching ? 
-					<p>Вход</p>
+					<p>Вход.....</p>
 					:
 					<p>Привет {name} </p>
 				}
