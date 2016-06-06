@@ -13,7 +13,7 @@ export default class Home extends Component {
 
 
 	componentDidMount() {
-		this.context.router.setRouteLeaveHook(this.props.route, this.routerWillLeave)
+		//this.context.router.setRouteLeaveHook(this.props.route, this.routerWillLeave)
 	}
 
 	routerWillLeave() {
